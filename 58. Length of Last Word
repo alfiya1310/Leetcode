@@ -1,0 +1,10 @@
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        stripped = s.strip().split(' ')
+        word = stripped[-1]
+        count = 0
+        
+        for ch in word:
+            count += 1
+            
+        return count
