@@ -1,10 +1,17 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        setOfNums = set()
-        
-        for num in nums:
-            if num in setOfNums:
-                return True
-            setOfNums.add(num)
-            
+        hm = {}
+
+        for num in range(len(nums)):
+             if nums[num] in hm:
+                 return True
+             else:
+                 hm.update({nums[num]: num})
+
         return False
+OR
+
+# class Solution:
+#    def containsDuplicate(self, nums: List[int]) -> bool:
+#        nums2 = set(nums)
+#        return len(nums) != len(nums2)
